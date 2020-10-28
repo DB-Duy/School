@@ -17,7 +17,7 @@ public class e3 {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             Graphics2D g2d = (Graphics2D) g;
-            
+            System.out.println();
         }
     }
 }
