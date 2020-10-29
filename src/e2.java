@@ -9,10 +9,12 @@ public class e2 {
         System.out.println("Enter frame height: ");
         MyFrame.height=in.nextInt();
         MyFrame frame = new MyFrame();
+        Dimension d=new Dimension(MyFrame.width,MyFrame.height);
         draw e2= new draw();
+        e2.setPreferredSize(d);
         frame.add(e2);
+        frame.pack();
     }
-
 
     public static class draw extends JPanel{
         public void paintComponent(Graphics g){
