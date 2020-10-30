@@ -30,7 +30,7 @@ public class e4 {
             for(int i=0;i<15;i++){
                 int increW=(int)(i*(double)this.getWidth()/15);
                 int increH=(int)(i*(double)this.getHeight()/15);
-                g.drawLine(increW,0,0,increH);
+                g.drawLine(increW,0,this.getHeight(),increH);
             }
         }
     }
