@@ -32,14 +32,19 @@ public class e3 {
             super.paintComponent(g);
             Graphics2D g2d = (Graphics2D) g;
             for(int i=0;i<15;i++){
-                double j=frame.getContentPane().getWidth()/(double)frame.getContentPane().getHeight();
-                double y=i*((double)frame.getContentPane().getWidth()/15);
-                double x=-j*y+(double)frame.getContentPane().getHeight();
-                g.drawLine(0,0,(int)y,(int)x);
+                int midW=this.getWidth()/2;
+                int midH=this.getHeight()/2;
+                int increW=(int)(i*(double)this.getWidth()/15);
+                int increH=(int)(i*(double)this.getHeight()/15);
+                g.drawLine(0,0,midW+increW,midH-increH);
+                g.drawLine(0,0,midW-increW,midH+increH);
+                g.drawLine(this.getWidth(),this.getHeight(),midW+increW,midH-increH);
+                g.drawLine(this.getWidth(),this.getHeight(),midW-increW,midH+increH);
                 if(c.equalsIgnoreCase("b")){
-                    g.drawLine(this.getWidth(),this.getHeight(),(int)y,(int)x);
-                    g.drawLine(this.getWidth(),0,(int)x,(int)x);
-                    g.drawLine(0,this.getHeight(),(int)x,(int)x);
+                    g.drawLine(0,this.getHeight(),midW+increW,midH+increH);
+                    g.drawLine(0,this.getHeight(),midW-increW,midH-increH);
+                    g.drawLine(this.getWidth(),0,midW-increW,midH-increH);
+                    g.drawLine(this.getWidth(),0,midW+increW,midH+increH);
                 }
             }
         }
