@@ -1,12 +1,12 @@
-
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
-public class e2 {
+
+public class e4 {
     public static void run() {
         draw.start();
     }
-    public static class draw extends JPanel{
+    public static class draw extends JPanel {
         public static int width=800;
         public static int height=800;
         public static JFrame frame = new JFrame();
@@ -16,10 +16,10 @@ public class e2 {
             width=in.nextInt();
             System.out.println("Enter height: ");
             height=in.nextInt();
-            draw e2=new draw();
+            draw e4 =new draw();
             frame.setPreferredSize(new Dimension(width,height));
-            e2.setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()));
-            frame.getContentPane().add(e2);
+            e4.setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()));
+            frame.getContentPane().add(e4);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
@@ -27,11 +27,11 @@ public class e2 {
         public void paintComponent(Graphics g){
             super.paintComponent(g);
             Graphics2D g2d = (Graphics2D) g;
-                g.drawLine(0, 0, this.getWidth() , this.getHeight());
-                g.drawLine(0, this.getHeight(), this.getWidth(), 0);
-                g.drawLine(0, this.getHeight() / 2, this.getWidth(), this.getHeight() / 2);
-                g.drawLine(this.getWidth() / 2, 0, this.getWidth() / 2, this.getHeight());
+            for(int i=0;i<15;i++){
+                int increW=(int)(i*(double)this.getWidth()/15);
+                int increH=(int)(i*(double)this.getHeight()/15);
+                g.drawLine(increW,0,0,increH);
+            }
         }
-        
-}
+    }
 }

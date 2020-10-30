@@ -14,12 +14,12 @@ public class e3 {
         
         public static void start(){
             Scanner in = new Scanner(System.in);
-            /*System.out.println("Exercise 3 a or b: ");
+            System.out.println("Exercise 3 a or b: ");
             c=in.nextLine();
             System.out.println("Enter width: ");
             width=in.nextInt();
             System.out.println("Enter height: ");
-            height=in.nextInt();*/
+            height=in.nextInt();
             draw e3=new draw();
             frame.setPreferredSize(new Dimension(width,height));
             e3.setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()));
@@ -38,9 +38,9 @@ public class e3 {
                 int increH=(int)(i*(double)this.getHeight()/15);
                 g.drawLine(0,0,midW+increW,midH-increH);
                 g.drawLine(0,0,midW-increW,midH+increH);
-                g.drawLine(this.getWidth(),this.getHeight(),midW+increW,midH-increH);
-                g.drawLine(this.getWidth(),this.getHeight(),midW-increW,midH+increH);
-                if(c.equalsIgnoreCase("b")){
+                if(c.equalsIgnoreCase("b"))
+                    g.drawLine(this.getWidth(),this.getHeight(),midW+increW,midH-increH);
+                    g.drawLine(this.getWidth(),this.getHeight(),midW-increW,midH+increH);
                     g.drawLine(0,this.getHeight(),midW+increW,midH+increH);
                     g.drawLine(0,this.getHeight(),midW-increW,midH-increH);
                     g.drawLine(this.getWidth(),0,midW-increW,midH-increH);
@@ -49,4 +49,3 @@ public class e3 {
             }
         }
     }
-}
