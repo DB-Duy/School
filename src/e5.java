@@ -63,12 +63,6 @@ public class e5 {
                 }
             }
             if(c.equalsIgnoreCase("s")){
-                /*int x=this.getWidth()/2;
-                int y=this.getHeight()/2;
-                int r=(int)(Math.sqrt(this.getWidth()*this.getWidth()+this.getHeight()*this.getHeight())/15);
-                while(x<this.getWidth()&&y<this.getHeight()){
-
-                }*/
                 int x = getSize().width / 2 - 10;
                 int y = getSize().height/ 2 - 10;
                 int width = 20;
@@ -79,14 +73,11 @@ public class e5 {
                 int i=0;
                 while (width<this.getWidth()&&height<this.getHeight()){
                     if (i % 2 == 0) {
-                        //   g.drawArc(x + 10, y + 10, width, height, startAngle + 10, -arcAngle);
-                        //  x = x - 5;
                         y = y - depth;
                         width = width + 2 * depth;
                         height = height + 2 * depth;
                         g.drawArc(x, y, width, height, startAngle, -arcAngle);
                     } else {
-                        //  g.drawArc(x + 10, y + 10, width, height, startAngle + 10, arcAngle);
                         x = x - 2 * depth;
                         y = y - depth;
                         width = width + 2 * depth;
