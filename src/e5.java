@@ -32,15 +32,68 @@ public class e5 {
             super.paintComponent(g);
             Graphics2D g2d = (Graphics2D) g;
             if(c.equalsIgnoreCase("r")){
-                int x=this.getWidth()/15;
-                int y=this.getHeight()/15;
-                int a=this.getWidth()/15;
-                int b=this.getHeight()/15;
+                int x=this.getWidth()/2;
+                int y=this.getHeight()/2;
+                int a=this.getWidth()/2;
+                int b=this.getHeight()/2;
+                int lenW=this.getWidth()/20;
+                int lenH=this.getHeight()/20;
                 int i=1;
                 while(x<this.getWidth()&&y<this.getHeight()){
-                    if(i%4==1 && i!=1){
-
+                    if(i!=1 && i%2==1){
+                        lenW+=this.getWidth()/20;
+                        lenH+=this.getHeight()/20;
                     }
+                    if(i%4==1){
+                        b=b+lenH;
+                    }
+                    else if(i%4==2){
+                        a=a-lenW;
+                    }
+                    else if(i%4==3){
+                        b=b-lenH;
+                    }
+                    else if(i%4==0){
+                        a=a+lenW;
+                    }
+                    g2d.drawLine(x,y,a,b);
+                    x=a;
+                    y=b;
+                    i++;
+                }
+            }
+            if(c.equalsIgnoreCase("s")){
+                /*int x=this.getWidth()/2;
+                int y=this.getHeight()/2;
+                int r=(int)(Math.sqrt(this.getWidth()*this.getWidth()+this.getHeight()*this.getHeight())/15);
+                while(x<this.getWidth()&&y<this.getHeight()){
+
+                }*/
+                int x = getSize().width / 2 - 10;
+                int y = getSize().height/ 2 - 10;
+                int width = 20;
+                int height = 20;
+                int startAngle = 0;
+                int arcAngle = 180;
+                int depth = 10;
+                int i=0;
+                while (width<this.getWidth()&&height<this.getHeight()){
+                    if (i % 2 == 0) {
+                        //   g.drawArc(x + 10, y + 10, width, height, startAngle + 10, -arcAngle);
+                        //  x = x - 5;
+                        y = y - depth;
+                        width = width + 2 * depth;
+                        height = height + 2 * depth;
+                        g.drawArc(x, y, width, height, startAngle, -arcAngle);
+                    } else {
+                        //  g.drawArc(x + 10, y + 10, width, height, startAngle + 10, arcAngle);
+                        x = x - 2 * depth;
+                        y = y - depth;
+                        width = width + 2 * depth;
+                        height = height + 2 * depth;
+                        g.drawArc(x, y, width, height, startAngle, arcAngle);
+                    }
+                    i++;
                 }
             }
         }
