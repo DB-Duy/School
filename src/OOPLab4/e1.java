@@ -1,3 +1,5 @@
+package OOPLab4;
+
 import javax.swing.*;
 public class e1 {
     public static void run() {
